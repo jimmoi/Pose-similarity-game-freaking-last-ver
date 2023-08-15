@@ -1,4 +1,4 @@
-from config import round_pose, scale, cam_type, crop_Hor, crop_Ver, output_all_image
+from config import round_pose, scale, cam_type, crop_Hor, crop_Ver, output_all_image, cam_number
 import os
 import cv2
 import mediapipe as mp
@@ -11,7 +11,7 @@ mp_pose = mp.solutions.pose
 mp_drawing = mp.solutions.drawing_utils
 
 #set webcam max resolution
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(cam_number)
 cap.set(cv2.CAP_PROP_FRAME_HEIGHT,2000);  cap.set(cv2.CAP_PROP_FRAME_WIDTH,2000)
 
 w_cam = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
